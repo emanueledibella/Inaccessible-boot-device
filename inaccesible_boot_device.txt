@@ -1,0 +1,21 @@
+1) bootrec /fixmbr 
+2) bootrec /fixboot
+	2.1) Se accesso negato bootsect /nt60 sys
+	2.2) Rifai bootrec /fixboot
+3) bootrec /rebuildbcd
+4) dism /online /cleanup-image /restorehealth
+5) sfc /scannow
+6) chckdsk C: /r /f
+	Dove C: è il volume di avvio, per conoscere il volume di avvio nel caso in cui fosse diverso:
+		1) diskpart
+		2) list disk
+		3) sel disk 0: Seleziona il disco dove è installato windows inserendo il relativo numero (puoi usare la dim. indicata per capirlo)
+		4) list vol 
+		5) Cerca il volume dove è insallato windows così da scoprire la lettera corrispondente
+
+Se dovessi avere ancora problemi, quando appare la scherma blu (quella senza il QR Code, cioè quella in cui ti dice di premere F8 per le opzioni di avvio), premi F8 e poi il pulsante corrispondente all'avvio in modalità provvisoria. Se il computer si avvia in modalità provvisoria, semplicemente riavvialo normalmente.
+
+Se non ha funzionato controlla se la tua scheda madre è UEFI o BIOS Legacy e controlla se il la partizione di avvio è MBR o GPT:
+	Se la scheda madre è BIOS Legacy allora dovrebbe essere MBR;
+	Se la scheda madre è UEFI allora dovrebbe essere GPT;
+	Considera che a partire da Windows 8 molto probabilmente sarà UEFI e quindi Windows userà una partizione di avvio GPT.
