@@ -14,6 +14,7 @@
 		5) Cerca il volume dove è insallato windows così da scoprire la lettera corrispondente
 
 Se dovessi avere ancora problemi, quando appare la scherma blu (quella senza il QR Code, cioè quella in cui ti dice di premere F8 per le opzioni di avvio), premi F8 e poi il pulsante corrispondente all'avvio in modalità provvisoria. Se il computer si avvia in modalità provvisoria, semplicemente riavvialo normalmente.
+	Questa soluzione è funzionale soprattutto se vedi che il sistema rileva la presenza di Windows ma senza riuscire a farlo partire, infatti in tal caso il problema è dovuto al fatto che la partizione di avvio è settata come "nascosta"
 
 Se non ha funzionato controlla se la tua scheda madre è UEFI o BIOS Legacy e controlla se il la partizione di avvio è MBR o GPT:
 	Se la scheda madre è BIOS Legacy allora dovrebbe essere MBR;
